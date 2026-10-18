@@ -218,3 +218,19 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project Data & Recordings (prevent large files from freezing Git)
+data/
+recordings/
+*.npy
+*.npz
+*.mp4
+*.avi
+
+# Trained Machine Learning Models
+models/
+*.h5
+*.keras
+*.pt
+*.pth
+*.onnx
