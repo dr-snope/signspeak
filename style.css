@@ -4,6 +4,15 @@ img {
   height: 80px;
 }
 
+.mascot {
+  position: fixed;
+  right: 24px;
+  bottom: 16px;
+  width: 160px;
+  height: auto;
+  float: none;
+}
+
 .navbar {
   display: flex;
   justify-content: right;
