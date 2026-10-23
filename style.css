@@ -2,20 +2,40 @@ body {
   background-color: rgb(213, 235, 253);
 }
 
+/* Logo Styles */
 img {
   float: left;
   width: 200px;
   height: 80px;
 }
 
+img.logo {
+  float: left;
+  width: 200px;
+  height: 80px;
+  background-color: rgb(74, 118, 212);
+}
 
+/* Navigation Bar Styles */
 .navbar {
   display: flex;
   justify-content: right;
   gap: 20px;
-  padding: 20px;
+  padding: 30px;
+  background-color: rgb(74, 118, 212);;
 }
 
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav a:active {
+  text-decoration: underline;
+}
+
+/* Image Styles */
 .appearence {
   width: 100%;
   height: 100%;
