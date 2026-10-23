@@ -1,0 +1,12 @@
+img {
+  float: left;
+  width: 200px;
+  height: 80px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+  padding: 20px;
+}
