@@ -1,7 +1,25 @@
+body {
+  background-color: rgb(213, 235, 253);
+}
+
 img {
   float: left;
   width: 200px;
   height: 80px;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+  padding: 20px;
+}
+
+.appearence {
+  width: 100%;
+  height: 100%;
+
 }
 
 .mascot {
@@ -11,11 +29,4 @@ img {
   width: 160px;
   height: auto;
   float: none;
-}
-
-.navbar {
-  display: flex;
-  justify-content: right;
-  gap: 20px;
-  padding: 20px;
 }
