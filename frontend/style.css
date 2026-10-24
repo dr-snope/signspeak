@@ -17,25 +17,47 @@ img.logo {
   background-color: rgb(74, 118, 212);
 }
 
-/* Navigation Bar Styles */
+/* NAVIGATION */
 .navbar {
-  display: flex;
-  justify-content: right;
-  gap: 20px;
-  padding: 30px;
-  background-color: rgb(74, 118, 212);;
+    min-height: 76px;
+    background: #4676ce;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    box-shadow: 0 3px 12px rgba(20, 60, 130, 0.12);
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
+.logo {
+    float: left;
+  width: 200px;
+  height: 80px;
+  background-color: rgb(74, 118, 212);
 }
 
-nav a:active {
-  text-decoration: underline;
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
 }
 
+.nav-link {
+    text-decoration: none;
+    color: #e7efff;
+    font-size: 16px;
+    padding: 10px 0;
+    transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: white;
+}
+
+.nav-link.active {
+    border-bottom: 3px solid #b8e6ff;
+}
 /* Image Styles */
 .appearence {
     display: block;
@@ -122,3 +144,24 @@ button:hover {
     position: relative;
     z-index: 2;
 }
+
+footer {
+    background-color: rgb(11, 17, 85);
+    color: white;
+    padding: 3px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-project p {
+    color: #C5D4F5;
+    font-size: 13px;
+    line-height: 1.8;}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;}
+
+    
