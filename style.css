@@ -1,0 +1,471 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #dceeff;
+    color: #101e55;
+}
+
+/* NAVIGATION */
+.navbar {
+    min-height: 76px;
+    background: #4676ce;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    box-shadow: 0 3px 12px rgba(20, 60, 130, 0.12);
+}
+
+.logo {
+    float: left;
+  width: 200px;
+  height: 80px;
+  background-color: rgb(74, 118, 212);
+}
+
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #e7efff;
+    font-size: 16px;
+    padding: 10px 0;
+    transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: white;
+}
+
+.nav-link.active {
+    border-bottom: 3px solid #b8e6ff;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px 25px;
+}
+
+.eyebrow {
+    color: #1674d9;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #1680ed;
+}
+
+.intro {
+    color: #536b8c;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: auto;
+}
+
+/* STEP CARDS */
+.steps {
+    max-width: 1450px;
+    margin: 30px auto;
+    padding: 0 35px;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr) 35px
+        minmax(0, 1fr) 35px
+        minmax(0, 1fr) 35px
+        minmax(0, 1fr);
+
+    align-items: center;
+}
+
+.step-card {
+    background: #f8fbff;
+    border: 1px solid white;
+    border-radius: 18px;
+
+    min-height: 370px;
+    padding: 20px 15px 12px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(40, 100, 190, 0.12);
+}
+
+/* NUMBER CIRCLES */
+.number {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+
+    background: #207ce3;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+/* CARD TEXT */
+.step-card h2 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #101e55;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #586e8c;
+    max-width: 250px;
+}
+
+/* ARROWS */
+.arrow {
+    color: #207ce3;
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+}
+
+/* ILLUSTRATION AREA */
+.art {
+    width: 100%;
+    height: 165px;
+    margin-top: auto;
+    padding-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+/* CSS OWL */
+.owl {
+    width: 110px;
+    height: 100px;
+    background: #2878ce;
+    border-radius: 48% 48% 43% 43%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset -8px -8px 0 #1b60ad;
+}
+
+.owl::before,
+.owl::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    width: 37px;
+    height: 42px;
+    background: #2878ce;
+    border-radius: 50% 50% 0 0;
+}
+
+.owl::before {
+    left: 3px;
+    transform: rotate(-20deg);
+}
+
+.owl::after {
+    right: 3px;
+    transform: rotate(20deg);
+}
+
+.owl-eyes {
+    display: flex;
+    gap: 12px;
+    position: absolute;
+    top: 30px;
+    z-index: 1;
+}
+
+.owl-eyes i {
+    width: 29px;
+    height: 29px;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+}
+
+.owl-eyes i::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: #101e55;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 9px;
+}
+
+.owl-beak {
+    position: absolute;
+    top: 59px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 13px solid #ffbf47;
+    z-index: 2;
+}
+
+.owl.small {
+    transform: scale(0.8);
+}
+
+/* STEP 1 */
+.camera-art {
+    flex-direction: column;
+    gap: 0;
+}
+
+.camera-base {
+    width: 125px;
+    height: 12px;
+    background: #7ab8f4;
+    border-radius: 3px;
+    box-shadow: 0 5px 0 #377ac7;
+    margin-top: 5px;
+}
+
+/* STEP 2 CAMERA FRAME */
+
+.camera-frame {
+    width: 140px !important;
+    height: 105px !important;
+    flex-shrink: 0;
+    border: none;
+    background: transparent;
+}
+
+/* Reduce the owl */
+.camera-frame .owl {
+    transform: scale(0.42) !important;
+}
+
+/* Camera corners */
+.camera-frame .corner {
+    width: 17px;
+    height: 17px;
+    border-width: 3px;
+}
+
+
+
+
+/* STEP 3 AI FRAME */
+.ai-frame {
+    width: 180px;
+    height: 125px;
+    border: 3px solid #b5d9ff;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+
+
+
+/* STEP 4 SPEECH */
+.speech-art {
+    position: relative;
+    overflow: visible;
+}
+
+.speech-art .owl {
+    transform: scale(0.85);
+}
+
+.speech-art .speech-bubble {
+    position: absolute;
+    top: 0;
+    right: -5px;
+
+    background: #207ce3 !important;
+    color: white !important;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    padding: 10px 17px;
+    border-radius: 30px;
+
+    white-space: nowrap;
+
+    box-shadow: 0 5px 10px rgba(30, 100, 190, 0.15);
+}
+/* BOTTOM BANNER */
+.banner {
+    max-width: 1050px;
+    min-height: 140px;
+
+    background: #c6e2ff;
+    border-radius: 100px;
+
+    margin: 40px auto;
+    padding: 15px 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+.banner-owl .owl {
+    transform: scale(0.85);
+}
+
+.banner h2 {
+    font-size: 27px;
+    line-height: 1.4;
+    font-weight: 800;
+    color: #101e55;
+}
+
+.banner h2 span {
+    color: #1680ed;
+}
+
+.heart {
+    color: #1680ed;
+    font-size: 50px;
+}
+
+/* TABLET */
+@media (max-width: 1050px) {
+    .steps {
+        grid-template-columns: 1fr 30px 1fr;
+        row-gap: 25px;
+    }
+
+    .steps .step-card:nth-of-type(3) {
+        grid-column: 1;
+    }
+
+    .steps .step-card:nth-of-type(4) {
+        grid-column: 3;
+    }
+
+    .steps .arrow:nth-of-type(3) {
+        display: none;
+    }
+
+    .banner {
+        margin: 30px 25px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+    .navbar {
+        padding: 15px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .navbar nav {
+        gap: 22px;
+    }
+
+    .logo {
+        font-size: 29px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 35px 20px 15px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+
+    .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .step-card {
+        width: 100%;
+        min-height: 340px;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+    }
+
+    .banner {
+        border-radius: 30px;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        margin: 25px 20px;
+        padding: 25px 15px;
+    }
+
+    .banner h2 {
+        font-size: 21px;
+    }
+
+    .heart {
+        display: none;
+    }
+}
