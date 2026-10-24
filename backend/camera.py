@@ -1,11 +1,18 @@
+# test by running camera_test.py
+
 import cv2
-cam = cv2.VideoCapture(0)
-while cam.isOpened():
-    ret, frame = cam.read()
-    if not ret:
-        break
-    cv2.imshow('cam feed press q to quit', frame)
-    if cv2.waitKey(1) == ord('q'): # keybord input to quit
-        break
-cam.release()
-cv2.destroyAllWindows()
+
+def get_frames():
+    camera = cv2.VideoCapture(0)
+    print("camera opened: ", camera.isOpened())
+
+    try:
+        while camera.isOpened():
+            ret, frame = camera.read()
+            if not ret:
+                break
+            yield frame
+    finally:
+        camera.release()
+        cv2.destroyAllWindows()
+
