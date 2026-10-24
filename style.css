@@ -43,8 +43,9 @@ nav a:active {
 }
 
 .mascot {
+  position: absolute;
   right: 24px;
-  bottom: 16px;
+  bottom: 2px;
   width: 160px;
   height: auto;
   z-index: 2;
