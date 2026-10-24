@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- Logo -->    
-<img class="logo" src="C:\Users\g_vis\OneDrive\Desktop\SignSpeak\signspeak\images\Name_tag.png" alt="name tag">
+<img class src="C:\Users\g_vis\OneDrive\Desktop\SignSpeak\signspeak\images\Name_tag.png" alt="name tag">
 
 <!-- Navigation Bar -->
 <nav class="navbar">
@@ -18,10 +18,32 @@
  <a href="about.html">About</a>  
 </nav>
 
-<img class="appearence" src="C:\Users\g_vis\OneDrive\Desktop\SignSpeak\signspeak\images\Front.png" alt="Interface">
 
+
+<!--Left box: camera-->
+<div class="hero-container"></div>
+<img class="appearence" src="C:\Users\g_vis\OneDrive\Desktop\SignSpeak\signspeak\images\Front.png" alt="Logo">
+</div>
+
+ <section class="translator">
+      <div class="camera-panel">
+        <video id="camera" autoplay playsinline muted hidden></video>
+        <p id="camera-message">Your camera preview will appear here.</p>
+        <button id="camera-button">Start Camera</button>
+      </div>
+
+      <div class="result-panel">
+        <h2>Recognized sign</h2>
+        <p id="result">Your translation will appear here.</p>
+        <button id="copy-button">Copy result</button>
+      </div>
+    </section>
+<br>
+<br>
+<br><br>
 <!-- Mascot -->
 <img class="mascot" src="C:\Users\g_vis\OneDrive\Desktop\SignSpeak\signspeak\images\Signy.png" alt="Signy, the SignSpeak mascot">
+
 </body>
 
 </html>
