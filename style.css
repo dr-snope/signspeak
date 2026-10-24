@@ -61,13 +61,7 @@ body {
     padding: 40px 20px 25px;
 }
 
-.eyebrow {
-    color: #1674d9;
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: 5px;
-    margin-bottom: 12px;
-}
+
 
 .hero h1 {
     font-size: clamp(38px, 4.5vw, 58px);
