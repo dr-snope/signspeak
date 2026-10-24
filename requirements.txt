@@ -1,3 +1,9 @@
 opencv-python
 mediapipe
 numpy
+scikit-learn
+scipy
+tensorflow
+matplotlib
+streamlit
+pyttsx3
