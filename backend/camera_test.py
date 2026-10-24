@@ -1,4 +1,4 @@
-from backend.camera import get_frames
+from camera import get_frames
 import cv2
 
 for frame in get_frames():
