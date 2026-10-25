@@ -66,7 +66,7 @@ Our codebase is organized into domain-driven subsystems:
 
 This repository operates on a **Domain-Driven Branching Strategy**:
 - `main`: Sacred production branch (always stable and deployable).
-- `frontend-base` & `backend-base`: Subsystem integration branches.
+- `frontend-base`, `ml-base` & `backend-base`: Subsystem integration branches.
 - `*-base`: Isolated developer sandboxes for rapid feature development and testing.
 
 ---
@@ -74,7 +74,7 @@ This repository operates on a **Domain-Driven Branching Strategy**:
 ## 👥 Contributors
 
 - **Yatharth** — ML model & Systems Architect
-- **Hasini** — UI/UX Design & Frontend Development
+- **Hasini and Harshika** — UI/UX Design & Frontend Development
 - **Abel** — Computer Vision & Backend Engineering
 - *The SignSpeak Team*
 
