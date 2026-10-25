@@ -282,7 +282,7 @@ img.logo {
     font-size: 30px;
     margin-bottom: 8px;
     color: #0B1155;
-    font-family: 'comic sans ms', cursive;
+    font-family: intrinsic, sans-serif;
     font-weight: bold;
     text-decoration: double underline;
 }
@@ -297,6 +297,10 @@ img.logo {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 22px;
+}
+
+.members-grid h3 {
+    color: #0B1155;
 }
 
 .member-card {
