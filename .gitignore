@@ -32,9 +32,8 @@ desktop.ini
 *.sublime-workspace
 
 # Machine Learning: Trained weights and serialized models
-# (Ignore heavy generated binaries, keep scripts)
-models/*.pkl
-models/*.joblib
+models/
+*.task
 *.pkl
 *.joblib
 *.h5
