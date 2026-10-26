@@ -1,9 +1,6 @@
-opencv-python
-mediapipe
-numpy
-scikit-learn
-scipy
-tensorflow
-matplotlib
-streamlit
-pyttsx3
+opencv-python>=4.8.0
+mediapipe>=0.10.0
+numpy>=1.24.0,<2.0.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+joblib>=1.3.0
