@@ -10,10 +10,10 @@ CSV_PATH = os.path.join(DATA_DIR, "gestures.csv")
 
 
 def initialize_csv():
-    header = ["label"] + [f"{axis}{i}" for i in range(21) for axis in ["x", "y", "z"]]
     os.makedirs(DATA_DIR, exist_ok=True)
     if not os.path.exists(CSV_PATH):
         with open(CSV_PATH, mode="w", newline="") as f:
+            header = ["label"] + [f"{axis}{i}" for i in range(21) for axis in ["x", "y", "z"]]
             csv.writer(f).writerow(header)
 
 

@@ -1,7 +1,7 @@
 import os
 import joblib
 import numpy as np
-from ml.utilities import normalize_landmarks
+from utilities import normalize_landmarks
 
 MODEL_PATH = os.path.join("models", "sign_model.pkl")
 _CACHED_MODEL = None
