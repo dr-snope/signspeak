@@ -50,7 +50,7 @@ def train_classifier():
     y_pred = clf.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
 
-    print(f"\n[RESULTS] Validation Accuracy: {accuracy * 100:.2f}%\n")
+    print(f"[RESULTS] Validation Accuracy: {accuracy * 100:.2f}%")
     print(classification_report(y_test, y_pred))
 
     os.makedirs(MODEL_DIR, exist_ok=True)
