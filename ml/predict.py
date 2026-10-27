@@ -47,3 +47,21 @@ def predict_sign(raw_coords: np.ndarray, confidence_threshold: float = 0.65):
         return None, confidence
 
     return predicted_label, confidence
+
+if __name__ == "__main__":
+    from backend.tracker import track_hands
+    from ml.utilities import extract_landmarks
+    import cv2
+
+    print("[INFO] Starting real-time test. Press 'q' to quit.")
+    for frame, result in track_hands():
+        raw_coords = extract_landmarks(result)
+        label, conf = predict_sign(raw_coords)
+
+        display_text = f"Sign: {label} ({conf*100:.1f}%)" if label else "Detecting..."
+        cv2.putText(frame, display_text, (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+        cv2.imshow("SignSpeak - Live Prediction Test", frame)
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+    cv2.destroyAllWindows()
