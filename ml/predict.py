@@ -1,7 +1,14 @@
 import os
+import sys
 import joblib
 import numpy as np
-from utilities import normalize_landmarks
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+try:
+    from ml.utilities import normalize_landmarks
+except ImportError:
+    from utilities import normalize_landmarks
 
 MODEL_PATH = os.path.join("models", "sign_model.pkl")
 _CACHED_MODEL = None

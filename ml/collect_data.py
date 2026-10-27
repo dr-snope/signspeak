@@ -1,8 +1,17 @@
 import os
+import sys
 import csv
 import cv2
 import numpy as np
-from utilities import extract_landmarks, normalize_landmarks
+
+# Ensure project root is in sys.path so sibling packages like 'backend' can be resolved
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+try:
+    from ml.utilities import extract_landmarks, normalize_landmarks
+except ImportError:
+    from utilities import extract_landmarks, normalize_landmarks
+
 from backend.tracker import track_hands
 
 DATA_DIR = "data"

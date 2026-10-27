@@ -3,8 +3,13 @@ import time
 import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
-from download_model import download_model
-from camera import get_frames
+
+try:
+    from backend.download_model import download_model
+    from backend.camera import get_frames
+except ImportError:
+    from download_model import download_model
+    from camera import get_frames
 
 # Initialize MediaPipe once
 options = vision.HandLandmarkerOptions(
