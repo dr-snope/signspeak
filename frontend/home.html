@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignSpeak - An Indian Sign Language Detector</title>
+    <title>SignSpeak- An Indian Sign Language Detector</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/Logo.png" type="image/x-icon">
 </head>
 <body>
   <!-- Navigation -->
     <header class="navbar">
-        <img class="logo" src="assets/Name_tag.png" alt="name tag">
+        <img class="logo" src="assets\Name_tag.png" alt="name tag">
 
         <nav>
             <a href="home.html" class="nav-link active">Home</a>
@@ -19,61 +19,57 @@
         </nav>
     </header>
 
-  <!-- Left box: camera -->
-  <div class="hero-container">
-    <img class="appearence" src="assets/Front.png" alt="front image">
-  </div>
 
-  <section class="translator">
+
+<!--Left box: camera-->
+<div class="hero-container"></div>
+<img class="appearence" src="assets/Front.png" alt="front image">
+</div>
+
+ <section class="translator">
       <div class="camera-panel">
-        <!-- Hidden video element supplies raw webcam feed -->
         <video id="camera" autoplay playsinline muted hidden></video>
-        <!-- Canvas renders video + green tracking dots -->
-        <canvas id="canvas" hidden style="max-width: 100%; border-radius: 8px;"></canvas>
         <p id="camera-message" style="color: black;">Your camera preview will appear here.</p>
         <button id="camera-button">Start Camera</button>
       </div>
 
       <div class="result-panel">
         <h2 style="color: black;">Recognized sign</h2>
-        <p id="result" style="color: black; font-size: 24px; font-weight: bold; min-height: 36px;">
-          Your translation will appear here.
-        </p>
+        <p id="result" style="color: black;">Your translation will appear here.</p>
         <button id="copy-button">Copy result</button>
       </div>
-  </section>
+    </section>
+<br>
+<br>
+<br><br>
+<!-- Mascot -->
+<img class="mascot" src="assets/Signy.png" alt="Signy, the SignSpeak mascot">
 
-  <br><br><br><br>
+<!-- How it works image -->
+<div class="how-it-works-image">
+    <img src="assets\How It Works_ Three Simple Steps.png" alt="How SignSpeak works">
+</div>
 
-  <!-- Mascot -->
-  <img class="mascot" src="assets/Signy.png" alt="Signy, the SignSpeak mascot">
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-main">
+        <div class="footer-brand">
+            <h3>SignSpeak</h3>
+            <p>An Indian Sign Language Detector</p>
+        </div>
 
-  <!-- How it works image -->
-  <div class="how-it-works-image">
-      <img src="assets/How It Works_ Three Simple Steps.png" alt="How SignSpeak works">
-  </div>
+        <nav class="footer-links">
+            <a href="home.html" style="font-size: 17px;">Home</a>
+            <a href="how-it-works.html" style="font-size: 17px;">How it works</a>
+            <a href="about.html" style="font-size: 17px;">About</a>
+        </nav>
+    </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-      <div class="footer-main">
-          <div class="footer-brand">
-              <h3>SignSpeak</h3>
-              <p>An Indian Sign Language Detector</p>
-          </div>
+    <div class="footer-bottom">
+        <p>© 2026 SignSpeak.A student innovation project.</p>
+    </div>
+</footer>
 
-          <nav class="footer-links">
-              <a href="home.html" style="font-size: 17px;">Home</a>
-              <a href="how-it-works.html" style="font-size: 17px;">How it works</a>
-              <a href="about.html" style="font-size: 17px;">About</a>
-          </nav>
-      </div>
-
-      <div class="footer-bottom">
-          <p>© 2026 SignSpeak. A student innovation project.</p>
-      </div>
-  </footer>
-
-  <!-- Connect Frontend Application Logic -->
-  <script src="app.js"></script>
 </body>
+
 </html>
