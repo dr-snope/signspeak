@@ -4,6 +4,7 @@
 > *Bridging silence and sound through edge computer vision and lightweight machine learning.*
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-Framework-009688?logo=fastapi&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-green?logo=opencv)
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-Landmark%20Extraction-orange?logo=google)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-ML%20Engine-F7931E?logo=scikit-learn&logoColor=white)
@@ -13,96 +14,109 @@
 
 ## 🌟 Overview
 
-**SignSpeak** is an AI-powered assistive platform designed to transcribe Indian Sign Language (ISL) gestures in real time. By transforming optical camera feeds into normalized geometric landmark vectors, SignSpeak delivers low-latency gesture classification without requiring heavy cloud compute or bulky deep-learning sequence runtimes.
+**SignSpeak** is an AI-powered assistive web platform designed to transcribe Indian Sign Language (ISL) gestures in real time. By transforming browser webcam video feeds into normalized geometric landmark vectors, SignSpeak delivers low-latency gesture classification without requiring heavy cloud runtimes.
 
-Featuring **Signy**, our official project mascot, the platform pairs an intuitive web interface with a high-performance computer vision pipeline.
+Featuring **Signy**, our official project mascot, the platform pairs an intuitive web interface with a high-performance computer vision pipeline connected via bi-directional WebSockets.
 
 ---
 
 ## 🏗️ System Architecture
 
-SignSpeak executes an optimized 5-stage inference pipeline:
+SignSpeak executes an optimized real-time client-server inference loop:
 
-1. **Webcam Stream (30 FPS)**: Continuous video frame capture via OpenCV.
-2. **MediaPipe Hands Engine**: High-fidelity detection and extraction of 21 3D joint landmarks (63 raw coordinate features).
-3. **Spatial Normalization**: Centering all points relative to Landmark 0 (wrist) and scaling to `[-1.0, 1.0]` to guarantee camera distance and hand-scale invariance.
-4. **Machine Learning Classifier**: Fast `scikit-learn` ensemble model (`RandomForestClassifier`) executing sub-millisecond inference with confidence thresholding.
-5. **SignSpeak Web Interface**: Live transcription canvas rendering predictions and visual feedback dynamically.
+1. **Browser Camera Capture**: Client webcam feeds are drawn to an HTML5 canvas at ~15 FPS and transmitted over a WebSocket connection.
+2. **MediaPipe Hand Landmark Tracking**: High-fidelity detection and extraction of 21 3D joint coordinates (63 raw coordinate features) on the server.
+3. **Geometric Spatial Normalization**: Centering all points relative to Landmark 0 (wrist) and scaling to `[-1.0, 1.0]` to guarantee camera distance, hand-scale, and screen-position invariance.
+4. **Machine Learning Inference**: A `RandomForestClassifier` running sub-millisecond predictions gated by a confidence threshold (`0.65`) to eliminate gesture-transition noise.
+5. **Real-Time Client Feedback**: The server returns JSON payloads containing recognized sign labels, confidence scores, and joint coordinates to render live green skeleton overlays on the browser preview.
 
 ---
 
 ## 📁 Repository Structure
 
-Our codebase is organized into 3 primary subdirectories alongside essential root configurations:
-
 ```text
 signspeak/
-├── frontend/            
+├── backend/
+│   ├── camera.py
+│   ├── download_model.py
+│   ├── server.py
+│   └── tracker.py
+├── data/
+│   └── gestures.csv
+├── frontend/
 │   ├── assets/
-│   ├── home.html
 │   ├── about.html
-│   ├── how_it_works.html
-│   └── (TBA)
-├── backend/              
-│   └── (TBA)
-├── ml/                   
-│   ├── utilities.py      
-│   ├── collect_data.py  
-│   ├── train.py         
-│   └── predict.py        
-├── .gitignore            
-├── requirements.txt      
-└── README.md
+│   ├── app.js
+│   ├── home.html
+│   ├── how-it-works.html
+│   ├── style.css
+│   ├── style2.css
+│   └── style3.css
+├── ml/
+│   ├── collect_data.py
+│   ├── predict.py
+│   ├── train.py
+│   └── utilities.py
+├── models/
+│   └── sign_model.pkl
+├── .gitignore
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
 ## 🚀 Quickstart Guide
 
-1. **Clone the Repository**
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/dr-snope/signspeak.git](https://github.com/dr-snope/signspeak.git)
+cd signspeak
+```
+
+### 2. Set Up Virtual Environment
+* **Windows (PowerShell):**
+  ```powershell
+  python -m venv .venv
+  .\.venv\Scripts\Activate.ps1
+  ```
+* **Linux / macOS:**
+  ```bash
+  python3 -m venv .venv
+  source .venv/bin/activate
+  ```
+
+### 3. Install Dependencies
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### 4. Data Collection & Model Training (Optional)
+To train on new custom gestures:
+* **Record gesture samples:**
+  ```bash
+  python ml/collect_data.py
+  ```
+* **Train and export classifier:**
+  ```bash
+  python ml/train.py
+  ```
+
+### 5. Launch SignSpeak
+1. **Start the FastAPI Backend:**
    ```bash
-   git clone [https://github.com/dr-snope/signspeak.git](https://github.com/dr-snope/signspeak.git)
-   cd signspeak
+   uvicorn backend.server:app --reload --port 8000
    ```
-
-2. **Set Up Virtual Environment**
-   * **Windows (PowerShell):**
-     ```powershell
-     python -m venv .venv
-     .\.venv\Scripts\Activate.ps1
-     ```
-   * **Linux / macOS:**
-     ```bash
-     python3 -m venv .venv
-     source .venv/bin/activate
-     ```
-
-3. **Install Dependencies**
-   ```bash
-   pip install --upgrade pip
-   pip install -r requirements.txt
-   ```
-
-4. **Train / Test Pipeline**
-   * Collect gesture samples:
-     ```bash
-     python ml/collect_data.py
-     ```
-   * Train the classifier:
-     ```bash
-     python ml/train.py
-     ```
-   * Launch backend stream:
-     ```bash
-     python backend/main.py
-     ```
+2. **Open the Frontend:**
+   * Open `frontend/home.html` in your browser (or via VS Code Live Server).
+   * Click **"Start Camera"** to grant webcam access and begin live sign transcription.
 
 ---
 
-
 ## 👥 Contributors
 
-- **Yatharth** — System Architect & Machine Learning Lead
+- **Yatharth** — System Architecture & Machine Learning Lead
 - **Abel** — Computer Vision & Backend Lead
 - **Hasini & Harshika** — UI/UX Design & Frontend Leads
 - *The SignSpeak Team*
