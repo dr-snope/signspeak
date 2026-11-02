@@ -1,8 +1,11 @@
 import base64
+import time
+
 import cv2
 import numpy as np
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi.middleware.cors import CORSMiddleware
 
 from backend.tracker import load_detector, detect_hand_landmarks
 from ml.predict import predict_sign, load_model 
@@ -28,6 +31,14 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
@@ -47,6 +58,8 @@ async def websocket_endpoint(websocket: WebSocket):
 
             if frame is None:
                 continue
+
+            #frame = cv2.flip(frame, 1)
 
             result = detect_hand_landmarks(frame, detector)
 

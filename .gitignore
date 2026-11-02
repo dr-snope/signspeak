@@ -40,13 +40,7 @@ models/
 *.keras
 
 # Dataset & Raw Capture dumps
-# (Avoid bloating the repo with thousands of recorded coordinates)
-data/*.csv
-data/*.npy
-data/gestures/
-data/raw/
-*.csv
-*.npy
+data/
 
 # Environment variables & secrets
 .env

@@ -10,7 +10,7 @@
 <body>
   <!-- Navigation -->
     <header class="navbar">
-        <img class="logo" src="assets\Name_tag.png" alt="name tag">
+        <img class="logo" src="assets/Name_tag.png" alt="name tag">
 
         <nav>
             <a href="home.html" class="nav-link active">Home</a>
@@ -29,6 +29,7 @@
  <section class="translator">
       <div class="camera-panel">
         <video id="camera" autoplay playsinline muted hidden></video>
+        <canvas id="canvas" hidden></canvas>
         <p id="camera-message" style="color: black;">Your camera preview will appear here.</p>
         <button id="camera-button">Start Camera</button>
       </div>
@@ -47,7 +48,7 @@
 
 <!-- How it works image -->
 <div class="how-it-works-image">
-    <img src="assets\How It Works_ Three Simple Steps.png" alt="How SignSpeak works">
+    <img src="assets/How It Works_ Three Simple Steps.png" alt="How SignSpeak works">
 </div>
 
 <!-- Footer -->
@@ -66,10 +67,11 @@
     </div>
 
     <div class="footer-bottom">
-        <p>© 2026 SignSpeak.A student innovation project.</p>
+        <p>© 2026 SignSpeak. A student innovation project.</p>
     </div>
 </footer>
 
+<script src="app.js"></script>
 </body>
 
 </html>
