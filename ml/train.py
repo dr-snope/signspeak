@@ -38,7 +38,6 @@ def train_classifier():
         print("[ERROR] You need at least 2 different gesture classes in your CSV to train a classifier.")
         return
 
-    # Stratified 80/20 split keeps label ratios balanced in both sets
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.20, random_state=42, stratify=y
     )

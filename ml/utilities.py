@@ -1,13 +1,11 @@
 import numpy as np
 
 def extract_landmarks(result):
-    # Support both MediaPipe Tasks API (.hand_landmarks) and Solutions API (.multi_hand_landmarks)
     landmarks = getattr(result, "hand_landmarks", None) or getattr(result, "multi_hand_landmarks", None)
     if not landmarks or len(landmarks) == 0:
         return np.zeros(63)
     else:
         hand = landmarks[0]
-        # In Solutions API, hand.landmark is a list; in Tasks API, hand is directly a list
         joint_list = getattr(hand, "landmark", hand)
         coord_list = []
         for joint in joint_list:

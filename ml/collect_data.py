@@ -4,7 +4,6 @@ import csv
 import cv2
 import numpy as np
 
-# Ensure project root is in sys.path so sibling packages like 'backend' can be resolved
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 try:
@@ -44,7 +43,6 @@ def collect_gestures():
     print("Controls: Press [SPACE] to capture snapshot | Press [Q] to quit")
 
     for frame, result in track_hands():
-        # Display capture status
         cv2.putText(frame, f"Label: {sign_label} | Samples: {count}", (20, 40),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
         cv2.putText(frame, "Press [SPACE] to capture | [Q] to quit", (20, 80),

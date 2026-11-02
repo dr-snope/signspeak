@@ -1,5 +1,3 @@
-# test by running camera_test.py
-
 import cv2
 
 def get_frames():

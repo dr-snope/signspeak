@@ -11,32 +11,40 @@ except ImportError:
     from download_model import download_model
     from camera import get_frames
 
-# Initialize MediaPipe once
-options = vision.HandLandmarkerOptions(
-    base_options=python.BaseOptions(model_asset_path=download_model()),
-    running_mode=vision.RunningMode.VIDEO,
-    num_hands=1
-)
-detector = vision.HandLandmarker.create_from_options(options)
+
+def load_detector():
+    options = vision.HandLandmarkerOptions(
+        base_options=python.BaseOptions(model_asset_path=download_model()),
+        running_mode=vision.RunningMode.VIDEO,
+        num_hands=1
+    )
+    return vision.HandLandmarker.create_from_options(options)
+
+
+def detect_hand_landmarks(frame, detector):
+    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
+    timestamp = time.monotonic_ns() // 1_000_000
+    return detector.detect_for_video(mp_image, timestamp)
+
 
 def track_hands():
-    for frame in get_frames():
-        frame = cv2.flip(frame, 1)
-        h, w, _ = frame.shape
-        
-        # MediaPipe Video mode detection
-        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
-        timestamp = time.monotonic_ns() // 1_000_000
-        result = detector.detect_for_video(mp_image, timestamp)
+    detector = load_detector()
+    try:
+        for frame in get_frames():
+            frame = cv2.flip(frame, 1)
+            h, w, _ = frame.shape
+            
+            result = detect_hand_landmarks(frame, detector)
 
-        # Draw green tracking dots
-        if result.hand_landmarks:
-            for joint in result.hand_landmarks[0]:
-                cx, cy = int(joint.x * w), int(joint.y * h)
-                cv2.circle(frame, (cx, cy), 5, (0, 255, 0), -1)
+            if result.hand_landmarks:
+                for joint in result.hand_landmarks[0]:
+                    cx, cy = int(joint.x * w), int(joint.y * h)
+                    cv2.circle(frame, (cx, cy), 5, (0, 255, 0), -1)
 
-        yield frame, result
+            yield frame, result
+    finally:
+        detector.close()
 
 
 if __name__ == "__main__":

@@ -1,6 +1,4 @@
 import base64
-import time
-
 import cv2
 import numpy as np
 from contextlib import asynccontextmanager
@@ -49,8 +47,6 @@ async def websocket_endpoint(websocket: WebSocket):
 
             if frame is None:
                 continue
-
-            #frame = cv2.flip(frame, 1)
 
             result = detect_hand_landmarks(frame, detector)
 

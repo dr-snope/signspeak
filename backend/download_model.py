@@ -1,6 +1,3 @@
-'''
-downloads MediaPipe Hand Landmarker
-'''
 import os
 import urllib
 from urllib.request import urlretrieve
@@ -14,5 +11,5 @@ def download_model():
     
     os.makedirs("models", exist_ok=True)
     print("Downloading mediapipe hand landmarker task ..")
-    urlretrieve(MODEL_URL, MODEL_PATH) #TODO: error handling
+    urlretrieve(MODEL_URL, MODEL_PATH)
     return MODEL_PATH

@@ -33,11 +33,9 @@ def predict_sign(raw_coords: np.ndarray, confidence_threshold: float = 0.65):
 
     model = load_model()
 
-    # Preprocess coordinates into a 1x63 feature row
     normalized_coords = normalize_landmarks(raw_coords)
     feature_vector = normalized_coords.reshape(1, -1)
 
-    # Compute prediction probabilities across all classes
     probabilities = model.predict_proba(feature_vector)[0]
     best_index = int(np.argmax(probabilities))
     confidence = float(probabilities[best_index])
