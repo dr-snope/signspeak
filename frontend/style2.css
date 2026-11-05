@@ -1,3 +1,5 @@
+
+/* SignSpeak How It Works Page Stylesheet */
 /* RESET */
 * {
     margin: 0;
@@ -384,5 +386,73 @@ body {
 
     .heart {
         display: none;
+    }
+}
+
+.footer {
+    background: #0B1155;
+    color: white;
+    padding: 25px 7% 15px;
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding-bottom: 22px;
+}
+
+.footer-brand h3 {
+    font-size: 23px;
+    margin: 0 0 6px;
+}
+
+.footer-brand p {
+    color: #C5D4F5;
+    font-size: 13px;
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.footer-links a {
+    color: #FFFFFF;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #7DBBFF;
+}
+
+.footer-bottom {
+    border-top: 1px solid #343B79;
+    padding-top: 13px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #C5D4F5;
+    font-size: 12px;
+    margin: 0;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .footer-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 18px;
     }
 }
