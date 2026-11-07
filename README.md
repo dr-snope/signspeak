@@ -57,8 +57,6 @@ signspeak/
 │   ├── predict.py
 │   ├── train.py
 │   └── utilities.py
-├── models/
-│   └── sign_model.pkl
 ├── .gitignore
 ├── README.md
 └── requirements.txt
@@ -66,7 +64,7 @@ signspeak/
 
 ---
 
-## 🚀 Quickstart Guide
+## 🚀 Quickstart Guide (Note that this project was built with Python 3.11, so using the same version is recommended)
 
 ### 1. Clone the Repository
 ```bash
@@ -77,12 +75,12 @@ cd signspeak
 ### 2. Set Up Virtual Environment
 * **Windows (PowerShell):**
   ```powershell
-  python -m venv .venv
+  py -3.11 -m venv .venv
   .\.venv\Scripts\Activate.ps1
   ```
 * **Linux / macOS:**
   ```bash
-  python3 -m venv .venv
+  python3.11 -m venv .venv
   source .venv/bin/activate
   ```
 
