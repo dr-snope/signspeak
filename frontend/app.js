@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     socket = new WebSocket("ws://localhost:8000/ws");
 
     socket.onopen = () => {
-      console.log("[WS] Connected to SignSpeak backend");
+      console.log("[WS] Connected to MudraSetu backend");
 
       // Stream a compressed frame to ML backend every 66ms (~15 FPS)
       streamInterval = setInterval(() => {

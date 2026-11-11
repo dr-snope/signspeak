@@ -49,7 +49,7 @@ def track_hands():
 
 if __name__ == "__main__":
     for frame, result in track_hands():
-        cv2.imshow("SignSpeak - Vision Backend Test", frame)
+        cv2.imshow("MudraSetu - Vision Backend Test", frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
     cv2.destroyAllWindows()
