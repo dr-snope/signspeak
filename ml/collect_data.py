@@ -47,7 +47,7 @@ def collect_gestures():
                     cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
         cv2.putText(frame, "Press [SPACE] to capture | [Q] to quit", (20, 80),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1)
-        cv2.imshow("SignSpeak - Data Collector", frame)
+        cv2.imshow("MudraSetu - Data Collector", frame)
 
         key = cv2.waitKey(1) & 0xFF
 

@@ -1,4 +1,4 @@
-# SignSpeak
+# MudraSetu
 
 > **Real-Time Indian Sign Language (ISL) Detection & Transcription Engine**  
 > *Bridging silence and sound through edge computer vision and lightweight machine learning.*
@@ -14,15 +14,13 @@
 
 ## 🌟 Overview
 
-**SignSpeak** is an AI-powered assistive web platform designed to transcribe Indian Sign Language (ISL) gestures in real time. By transforming browser webcam video feeds into normalized geometric landmark vectors, SignSpeak delivers low-latency gesture classification without requiring heavy cloud runtimes.
-
-Featuring **Signy**, our official project mascot, the platform pairs an intuitive web interface with a high-performance computer vision pipeline connected via bi-directional WebSockets.
+**MudraSetu** is an AI-powered assistive web platform designed to transcribe Indian Sign Language (ISL) gestures in real time. By transforming browser webcam video feeds into normalized geometric landmark vectors, MudraSetu delivers low-latency gesture classification without requiring heavy cloud runtimes.
 
 ---
 
 ## 🏗️ System Architecture
 
-SignSpeak executes an optimized real-time client-server inference loop:
+MudraSetu executes an optimized real-time client-server inference loop:
 
 1. **Browser Camera Capture**: Client webcam feeds are drawn to an HTML5 canvas at ~15 FPS and transmitted over a WebSocket connection.
 2. **MediaPipe Hand Landmark Tracking**: High-fidelity detection and extraction of 21 3D joint coordinates (63 raw coordinate features) on the server.
@@ -35,7 +33,7 @@ SignSpeak executes an optimized real-time client-server inference loop:
 ## 📁 Repository Structure
 
 ```text
-signspeak/
+mudrasetu/
 ├── backend/
 │   ├── camera.py
 │   ├── download_model.py
@@ -68,8 +66,8 @@ signspeak/
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/dr-snope/signspeak.git](https://github.com/dr-snope/signspeak.git)
-cd signspeak
+git clone https://github.com/nexushci/mudrasetu.git
+cd mudrasetu
 ```
 
 ### 2. Set Up Virtual Environment
@@ -101,7 +99,7 @@ To train on new custom gestures:
   python ml/train.py
   ```
 
-### 5. Launch SignSpeak
+### 5. Launch MudraSetu
 1. **Start the FastAPI Backend:**
    ```bash
    uvicorn backend.server:app --reload --port 8000
@@ -117,7 +115,7 @@ To train on new custom gestures:
 - **Yatharth** — System Architecture & Machine Learning Lead
 - **Abel** — Computer Vision & Backend Lead
 - **Hasini & Harshika** — UI/UX Design & Frontend Leads
-- *The SignSpeak Team*
+- *The MudraSetu Team | NexusHCI*
 
 ---
 

@@ -21,7 +21,7 @@ async def lifespan(app: FastAPI):
         app.state.detector = detector
         app.state.model = load_model()
 
-        print("[INFO] SignSpeak backend ready")
+        print("[INFO] MudraSetu backend ready")
         yield
 
     finally:

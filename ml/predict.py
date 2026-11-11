@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
         display_text = f"Sign: {label} ({conf*100:.1f}%)" if label else "Detecting..."
         cv2.putText(frame, display_text, (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-        cv2.imshow("SignSpeak - Live Prediction Test", frame)
+        cv2.imshow("MudraSetu - Live Prediction Test", frame)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
