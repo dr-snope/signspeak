@@ -1,6 +1,10 @@
 body {
   background-color: rgb(213, 235, 253);
-  color: rgb(253, 253, 253);
+  color: #1A202C;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Logo Styles */
@@ -29,12 +33,11 @@ img.logo {
 }
 
 .logo {
-    float: left;
+  float: left;
   width: 200px;
   height: 80px;
   background-color: rgb(74, 118, 212);
 }
-
 
 .navbar nav {
     display: flex;
@@ -45,9 +48,10 @@ img.logo {
 .nav-link {
     text-decoration: none;
     color: #e7efff;
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 500;
     padding: 10px 0;
-    transition: 0.3s;
+    transition: 0.25s ease;
 }
 
 .nav-link:hover,
@@ -58,6 +62,7 @@ img.logo {
 .nav-link.active {
     border-bottom: 3px solid #b8e6ff;
 }
+
 /* Image Styles */
 .appearence {
     display: block;
@@ -65,10 +70,12 @@ img.logo {
     height: auto;
 }
 
+/* Footer */
 .footer {
     background: #0B1155;
     color: white;
     padding: 25px 7% 15px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
 }
 
 .footer-main {
@@ -81,7 +88,9 @@ img.logo {
 
 .footer-brand h3 {
     font-size: 23px;
+    font-weight: 700;
     margin: 0 0 6px;
+    letter-spacing: -0.3px;
 }
 
 .footer-brand p {
@@ -139,50 +148,49 @@ img.logo {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 45px 6.5%;
+    padding: 50px 6.5%;
     min-height: 300px;
 }
 
 .hero-text {
-    max-width: 500px;
+    max-width: 520px;
     color: #0B1155;
-    font-family: 'comic sans ms', cursive;
-}
-
-.hero-text h1 {
-    font-size: 200px;
-    line-height: 1.2;
-    margin: 15px 0;
 }
 
 .eyebrow {
     color: #1982FD;
-    font-size: 14px;
-    letter-spacing: 5px;
-    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
 }
 
 .hero h1 {
-    font-size: 43px;
-    line-height: 1.2;
-    margin: 15px 0;
+    font-size: 42px;
+    line-height: 1.25;
+    font-weight: 800;
+    color: #0B1155;
+    margin: 12px 0 16px;
+    letter-spacing: -0.5px;
 }
 
 .hero-text > p:last-child {
     color: #5770A3;
     line-height: 1.7;
-    font-size: 17px;
+    font-size: 16px;
+    margin: 0;
 }
 
 .hero-image {
-    width: 20%;
+    width: 25%;
     text-align: center;
 }
 
 .hero-image img {
     width: 100%;
-    max-width: 400px;
-    height: 350px;
+    max-width: 320px;
+    height: auto;
     object-fit: contain;
 }
 
@@ -190,23 +198,17 @@ img.logo {
 .highlights {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-    padding: 30px 6.5%;
+    gap: 24px;
+    padding: 35px 6.5%;
 }
 
 .highlight-card {
-    padding: 22px 26px;
-    border-radius: 13px;
+    padding: 26px 28px;
+    border-radius: 16px;
     border: 1px solid #E1EDFF;
     display: grid;
-    gap: 15px;
-}
-
-.highlight-heading h2 {
-    font-size: 18px;
-    margin: 0;
-    color: #0B1155;
-    text-align: center;
+    gap: 14px;
+    box-shadow: 0 4px 16px rgba(11, 17, 85, 0.04);
 }
 
 .team-highlight {
@@ -226,12 +228,15 @@ img.logo {
 .highlight-heading {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
 }
 
 .highlight-heading h2 {
     font-size: 20px;
-    text-decoration: underline;
+    font-weight: 700;
+    color: #0B1155;
+    margin: 0;
+    text-decoration: none;
 }
 
 .highlight-icon {
@@ -239,12 +244,12 @@ img.logo {
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    width: 55px;
-    height: 55px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     background: #DCEBFF;
     color: #3476D5;
-    font-size: 34px;
+    font-size: 28px;
 }
 
 .mission-highlight .highlight-icon {
@@ -266,30 +271,31 @@ img.logo {
 
 .highlight-card ul {
     padding-left: 20px;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 /* Team heading */
 .members-section {
-    padding: 5px 6.5% 30px;
+    padding: 15px 6.5% 45px;
 }
 
 .section-heading {
     text-align: center;
-    margin: 5px 0 25px;
+    margin: 10px 0 35px;
 }
 
 .section-heading h2 {
-    font-size: 30px;
+    font-size: 32px;
     margin-bottom: 8px;
     color: #0B1155;
-    font-family: intrinsic, sans-serif;
-    font-weight: bold;
-    text-decoration: double underline;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-decoration: none;
 }
 
 .section-heading p {
     color: #5770A3;
+    font-size: 16px;
     margin: 0;
 }
 
@@ -297,49 +303,48 @@ img.logo {
 .members-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 22px;
-}
-
-.members-grid h3 {
-    color: #0B1155;
+    gap: 24px;
 }
 
 .member-card {
     background: #FFFFFF;
     border: 1px solid #D9E9FF;
-    border-radius: 12px;
-    padding: 18px 17px;
+    border-radius: 16px;
+    padding: 24px 20px;
     text-align: center;
-
-    /* Smooth hover animation */
+    box-shadow: 0 6px 20px rgba(11, 17, 85, 0.05);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* The card gently jumps up when hovered */
 .member-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(25, 80, 150, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(25, 80, 150, 0.12);
 }
 
 .member-avatar {
-    width: 100px;
-    height: 100px;
+    width: 95px;
+    height: 95px;
     border-radius: 50%;
     object-fit: cover;
     background: #E1EDFF;
+    margin: 0 auto;
+    border: 3px solid #F0F6FF;
 }
 
 .member-card h3 {
-    font-size: 20px;
-    margin: 12px 0 8px;
+    font-size: 19px;
+    font-weight: 700;
+    color: #0B1155;
+    margin: 14px 0 6px;
 }
 
 .github-link {
-    display: block;
+    display: inline-block;
     color: #5770A3;
     font-size: 13px;
     margin-bottom: 14px;
-    overflow-wrap: anywhere;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .github-link:hover {
@@ -350,10 +355,12 @@ img.logo {
     display: inline-block;
     background: #E4F0FF;
     color: #2169CB;
-    padding: 6px 12px;
+    padding: 6px 14px;
     border-radius: 20px;
     font-size: 12px;
+    font-weight: 600;
     line-height: 1.3;
+    margin-bottom: 14px;
 }
 
 .role-purple {
@@ -373,8 +380,29 @@ img.logo {
 
 .member-card > p {
     color: #5770A3;
-    font-size: 13px;
+    font-size: 13.5px;
     line-height: 1.65;
     text-align: left;
-    margin-bottom: 0;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1050px) {
+    .members-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .highlights {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+    .members-grid {
+        grid-template-columns: 1fr;
+    }
 }

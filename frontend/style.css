@@ -1,6 +1,10 @@
 body {
   background-color: rgb(213, 235, 253);
-  color: rgb(253, 253, 253);
+  color: #1A202C;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Logo Styles */
@@ -29,12 +33,11 @@ img.logo {
 }
 
 .logo {
-    float: left;
+  float: left;
   width: 200px;
   height: 80px;
   background-color: rgb(74, 118, 212);
 }
-
 
 .navbar nav {
     display: flex;
@@ -45,9 +48,10 @@ img.logo {
 .nav-link {
     text-decoration: none;
     color: #e7efff;
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 500;
     padding: 10px 0;
-    transition: 0.3s;
+    transition: 0.25s ease;
 }
 
 .nav-link:hover,
@@ -58,6 +62,7 @@ img.logo {
 .nav-link.active {
     border-bottom: 3px solid #b8e6ff;
 }
+
 /* Image Styles */
 .appearence {
     display: block;
@@ -77,49 +82,107 @@ img.logo {
 }
 
 /* Translator Styles */
-.description {
-  color: #666b82;
-  line-height: 1.7;
+.translator {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 920px;
+    margin: -60px auto 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .camera-panel,
 .result-panel {
-  background: white;
-  padding: 25px;
+  background: #FFFFFF;
+  padding: 28px;
   border-radius: 18px;
-  box-shadow: 0 8px 28px #20234412;
-  z-index: 1;
+  box-shadow: 0 10px 30px rgba(11, 17, 85, 0.08);
+  border: 1px solid rgba(70, 118, 206, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .camera-panel {
   text-align: center;
+  align-items: center;
+}
+
+.result-panel h2 {
+  color: #0B1155;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+
+#camera-message {
+  color: #5770A3;
+  font-size: 15px;
+  margin: 24px 0;
+  font-weight: 500;
+}
+
+#result {
+  min-height: 56px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1982FD;
+  background: #F4F8FE;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1.5px dashed #BFDBFE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0 24px 0;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+video, canvas {
+  width: 100%;
+  border-radius: 12px;
 }
 
 video {
-  width: 100%;
-  border-radius: 12px;
   transform: scaleX(-1);
 }
 
 button {
-  background: #6558d3;
+  background: #4676ce;
   color: white;
   border: none;
   border-radius: 10px;
-  padding: 12px 18px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
+  font-family: inherit;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(70, 118, 206, 0.25);
 }
 
 button:hover {
-  background: #5043b7;
+  background: #3461b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(70, 118, 206, 0.35);
 }
 
-#result {
-  min-height: 50px;
-  font-size: 24px;
-  font-weight: bold;
+#copy-button {
+  background: #FFFFFF;
+  color: #4676ce;
+  border: 1.5px solid #4676ce;
+  box-shadow: none;
+  align-self: flex-start;
 }
 
+#copy-button:hover {
+  background: #F0F6FF;
+  color: #2F55A4;
+  border-color: #3461b3;
+}
 
 .hero-container {
     position: relative;
@@ -127,29 +190,12 @@ button:hover {
     line-height: 0;
 }
 
-.appearence {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.translator {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px;
-    max-width: 900px;
-    margin: -60px auto 0;
-    padding: 0 20px;
-    text-align: left;
-    position: relative;
-    z-index: 2;
-}
-
-
+/* Footer */
 .footer {
     background: #0B1155;
     color: white;
     padding: 25px 7% 15px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
 }
 
 .footer-main {
@@ -162,7 +208,9 @@ button:hover {
 
 .footer-brand h3 {
     font-size: 23px;
+    font-weight: 700;
     margin: 0 0 6px;
+    letter-spacing: -0.3px;
 }
 
 .footer-brand p {
@@ -201,7 +249,12 @@ button:hover {
 }
 
 /* Mobile layout */
-@media (max-width: 600px) {
+@media (max-width: 650px) {
+    .translator {
+        grid-template-columns: 1fr;
+        margin-top: -30px;
+    }
+
     .footer-main {
         flex-direction: column;
         align-items: flex-start;
