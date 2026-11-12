@@ -39,8 +39,6 @@ mudrasetu/
 │   ├── download_model.py
 │   ├── server.py
 │   └── tracker.py
-├── data/
-│   └── gestures.csv
 ├── frontend/
 │   ├── assets/
 │   ├── about.html
