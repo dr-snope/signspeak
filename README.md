@@ -86,8 +86,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 4. Data Collection & Model Training (Optional)
-To train on new custom gestures:
+### 4. Data Collection & Model Training
 * **Record gesture samples:**
   ```bash
   python ml/collect_data.py
